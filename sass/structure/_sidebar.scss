@@ -1,0 +1,41 @@
+@include bp-medium {
+
+	.site-main.with-sidebar {
+		float: left;
+		width: ($size__site-main - $size__site-sidebar - 5%);
+	}
+
+	.site-main.with-sidebar.sidebar-left {
+		float: right;
+		width: ($size__site-main - $size__site-sidebar - 5%);
+	}
+
+	.site-content .widget-area {
+		overflow: hidden;
+		width: $size__site-sidebar;
+		float: right;
+		padding-bottom: $spacing__large;
+	}
+
+	.site-main.with-sidebar.sidebar-left .widget-area {
+		float: left;
+	}
+
+}
+
+@include bp-large {
+
+	.site-main.with-sidebar {
+		width: ($size__site-main - $size__site-sidebar-wide - 8%);
+	}
+
+	.site-main.with-sidebar.sidebar-left {
+		width: ($size__site-main - $size__site-sidebar-wide - 8%);
+	}
+
+	.site-content .widget-area {
+		width: $size__site-sidebar-wide;
+		padding-bottom: $spacing__largest;
+	}
+
+}

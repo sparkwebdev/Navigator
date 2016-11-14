@@ -1,0 +1,205 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+
+// =============================================================================
+// String Replace https://css-tricks.com/snippets/sass/str-replace-function/
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+
+// =============================================================================
+// Breakpoints
+// =============================================================================
+
+@mixin bp-mobile {
+  @media only screen and (min-width: 20em) { // 320px @ 16px;
+    @content;
+  }
+}
+@mixin bp-mobile-landscape {
+  @media only screen and (min-width: 30em) { // 480px @ 16px;
+    @content;
+  }
+}
+@mixin bp-small {
+  @media only screen and (min-width: 37.5em) { // 600px @ 16px;
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (min-width: 48em) { // 768px @ 16px;
+    @content;
+  }
+}
+
+@mixin bp-medium-large {
+  @media only screen and (min-width: 56.25em) { // 900px @ 16px;
+    @content;
+  }
+}
+
+@mixin bp-large {
+  @media only screen and (min-width: 64em) { // 1024px @ 16px;
+    @content;
+  }
+}
+
+@mixin bp-desktop {
+  @media only screen and (min-width: 75em) { // 1200px @ 16px;
+    @content;
+  }
+}
+
+@mixin bp-full {
+  @media only screen and (min-width: 100em) { // 1600px @ 16px;
+    @content;
+  }
+}
+
+
+@mixin bp-nav-switch {
+  @media only screen and (min-width: 64em) { // 1024px @ 16px;
+    @content;
+  }
+}
+
+/*
+@mixin bp-device-mobile {
+  @media only screen and (min-width: 30em) and (min-height: 30em) { // 480px @ 16px;
+    @content;
+  }
+}
+@mixin bp-device-phablet {
+  @media only screen and (min-width: 40em) and (min-height: 40em) { // 640px @ 16px;
+    @content;
+  }
+}
+@mixin bp-device-tablet {
+  @media only screen and (min-width: 50em) and (min-height: 50em) { // 800px @ 16px;
+    @content;
+  }
+}
+@mixin bp-device-desktop {
+  @media only screen and (min-width: 75em) and (min-height: 50em) { // 1024px by 800px @ 16px;
+    @content;
+  }
+}
+
+@mixin bp-height-mobile {
+  @media only screen and (min-height: 30em) { // 480px @ 16px;
+    @content;
+  }
+}
+@mixin bp-height-small {
+  @media only screen and (min-height: 37.5em) { // 600px @ 16px;
+    @content;
+  }
+}
+@mixin bp-height-medium {
+  @media only screen and (min-height: 48em) { // 768px @ 16px;
+    @content;
+  }
+}
+
+@mixin bp-height-large {
+  @media only screen and (min-width: 60em) and (min-height: 60em) { // 960px @ 16px;
+    @content;
+  }
+}
+@mixin bp-height-largest {
+  @media only screen and (min-height: 70em) { // 1120px @ 16px;
+    @content;
+  }
+}
+@mixin bp-height-full {
+  @media only screen and (min-height: 80em) { // 1280px @ 16px;
+    @content;
+  }
+}*/
+
+
+// Simple grid mixins
+// http://thesassway.com/intermediate/simple-grid-mixins
+
+@mixin row () {
+  font-size: 0;
+}
+
+// This is column mixins.
+@mixin col ($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+    width: 100%;
+    display: inline-block;
+    font-size: 16px;
+
+    @media only screen and (min-width: 48em) {
+        width: percentage($col/$sum);
+        vertical-align: $align;
+	    padding-left: if($first, 0, $gap);
+	    padding-right: if($last, 0, $gap);
+    }
+
+    &.fluid { width: percentage($col/$sum); }
+}

@@ -1,0 +1,15 @@
+.cols {
+	
+	clear: left;
+	
+	.col {
+	
+		@include bp-medium {
+				
+			width: 50%;
+			float: left;
+			
+		}
+	}
+		
+}
