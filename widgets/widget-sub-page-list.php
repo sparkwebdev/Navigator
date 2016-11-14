@@ -2,7 +2,7 @@
 /**
  * Template part for Sub Pages List Widget
  *
- * @package Mezzanine
+ * @package Navigator
  */
 ?>
 <?php

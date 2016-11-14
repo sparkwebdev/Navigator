@@ -4,7 +4,7 @@
  *
  * Register e.g. 'Product Types'
  *
- * @package Mezzanine
+ * @package Navigator
  */
  
 /**
@@ -13,25 +13,25 @@
 function product_types() {
 
 	$labels = array(
-		'name'                       => _x( 'Types', 'Taxonomy General Name', 'mezzanine' ),
-		'singular_name'              => _x( 'Type', 'Taxonomy Singular Name', 'mezzanine' ),
-		'menu_name'                  => __( 'Product Types', 'mezzanine' ),
-		'all_items'                  => __( 'All Types', 'mezzanine' ),
-		'parent_item'                => __( 'Parent Type', 'mezzanine' ),
-		'parent_item_colon'          => __( 'Parent Type:', 'mezzanine' ),
-		'new_item_name'              => __( 'New Type Name', 'mezzanine' ),
-		'add_new_item'               => __( 'Add New Type', 'mezzanine' ),
-		'edit_item'                  => __( 'Edit Type', 'mezzanine' ),
-		'update_item'                => __( 'Update Type', 'mezzanine' ),
-		'view_item'                  => __( 'View Type', 'mezzanine' ),
-		'separate_items_with_commas' => __( 'Separate types with commas', 'mezzanine' ),
-		'add_or_remove_items'        => __( 'Add or remove types', 'mezzanine' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'mezzanine' ),
-		'popular_items'              => __( 'Popular Types', 'mezzanine' ),
-		'search_items'               => __( 'Search Types', 'mezzanine' ),
-		'not_found'                  => __( 'Not Found', 'mezzanine' ),
-		'items_list'                 => __( 'Types list', 'mezzanine' ),
-		'items_list_navigation'      => __( 'Types list navigation', 'mezzanine' ),
+		'name'                       => _x( 'Types', 'Taxonomy General Name', 'navigator' ),
+		'singular_name'              => _x( 'Type', 'Taxonomy Singular Name', 'navigator' ),
+		'menu_name'                  => __( 'Product Types', 'navigator' ),
+		'all_items'                  => __( 'All Types', 'navigator' ),
+		'parent_item'                => __( 'Parent Type', 'navigator' ),
+		'parent_item_colon'          => __( 'Parent Type:', 'navigator' ),
+		'new_item_name'              => __( 'New Type Name', 'navigator' ),
+		'add_new_item'               => __( 'Add New Type', 'navigator' ),
+		'edit_item'                  => __( 'Edit Type', 'navigator' ),
+		'update_item'                => __( 'Update Type', 'navigator' ),
+		'view_item'                  => __( 'View Type', 'navigator' ),
+		'separate_items_with_commas' => __( 'Separate types with commas', 'navigator' ),
+		'add_or_remove_items'        => __( 'Add or remove types', 'navigator' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'navigator' ),
+		'popular_items'              => __( 'Popular Types', 'navigator' ),
+		'search_items'               => __( 'Search Types', 'navigator' ),
+		'not_found'                  => __( 'Not Found', 'navigator' ),
+		'items_list'                 => __( 'Types list', 'navigator' ),
+		'items_list_navigation'      => __( 'Types list navigation', 'navigator' ),
 	);
 	$args = array(
 		'labels'                     => $labels,

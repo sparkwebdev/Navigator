@@ -2,7 +2,7 @@
 /**
  * Template part for Recent Posts Widget
  *
- * @package Mezzanine
+ * @package Navigator
  */
 ?>
 <aside class="widget widget_recent_posts">
@@ -22,7 +22,7 @@
 			echo '<li class="latest-news-item">';
 			echo '<h3><a href="'.get_permalink().'">'.get_the_title().'</a></h3>';
 			echo '<div class="entry-meta">';
-			mezzanine_posted_on();
+			navigator_posted_on();
 			echo '</div><!-- .entry-meta -->';
 			$the_excerpt = get_the_excerpt();
 			if ($the_excerpt) {

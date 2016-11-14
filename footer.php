@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Mezzanine
+ * @package Navigator
  */
 
 ?>
@@ -18,9 +18,9 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'primary-menu-footer' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mezzanine' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'mezzanine' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'navigator' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'navigator' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'mezzanine' ), 'mezzanine', '<a href="http://stevenpark.co.uk" rel="designer">Steven Park</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'navigator' ), 'navigator', '<a href="http://stevenpark.co.uk" rel="designer">Steven Park</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

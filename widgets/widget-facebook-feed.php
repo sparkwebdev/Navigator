@@ -2,7 +2,7 @@
 /**
  * Template part for embedding Facebook Feed
  *
- * @package Mezzanine
+ * @package Navigator
  */
  
 $facebookURL = "https://www.facebook.com/company";

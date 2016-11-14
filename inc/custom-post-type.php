@@ -4,7 +4,7 @@
  *
  * Register e.g. 'Product'
  *
- * @package Mezzanine
+ * @package Navigator
  */
 
 /**
@@ -13,23 +13,23 @@
 function product_post_type() {
 
 	$labels = array(
-		'name'                => _x( 'Products', 'Post Type General Name', 'mezzanine' ),
-		'singular_name'       => _x( 'Product', 'Post Type Singular Name', 'mezzanine' ),
-		'menu_name'           => __( 'Products', 'mezzanine' ),
-		'parent_item_colon'   => __( 'Parent Product:', 'mezzanine' ),
-		'all_items'           => __( 'All Products', 'mezzanine' ),
-		'view_item'           => __( 'View Product', 'mezzanine' ),
-		'add_new_item'        => __( 'Add New Product', 'mezzanine' ),
-		'add_new'             => __( 'New Product', 'mezzanine' ),
-		'edit_item'           => __( 'Edit Product', 'mezzanine' ),
-		'update_item'         => __( 'Update Product', 'mezzanine' ),
-		'search_items'        => __( 'Search products', 'mezzanine' ),
-		'not_found'           => __( 'No products found', 'mezzanine' ),
-		'not_found_in_trash'  => __( 'No products found in Trash', 'mezzanine' ),
+		'name'                => _x( 'Products', 'Post Type General Name', 'navigator' ),
+		'singular_name'       => _x( 'Product', 'Post Type Singular Name', 'navigator' ),
+		'menu_name'           => __( 'Products', 'navigator' ),
+		'parent_item_colon'   => __( 'Parent Product:', 'navigator' ),
+		'all_items'           => __( 'All Products', 'navigator' ),
+		'view_item'           => __( 'View Product', 'navigator' ),
+		'add_new_item'        => __( 'Add New Product', 'navigator' ),
+		'add_new'             => __( 'New Product', 'navigator' ),
+		'edit_item'           => __( 'Edit Product', 'navigator' ),
+		'update_item'         => __( 'Update Product', 'navigator' ),
+		'search_items'        => __( 'Search products', 'navigator' ),
+		'not_found'           => __( 'No products found', 'navigator' ),
+		'not_found_in_trash'  => __( 'No products found in Trash', 'navigator' ),
 	);
 	$args = array(
-		'label'               => __( 'product', 'mezzanine' ),
-		'description'         => __( 'New Products', 'mezzanine' ),
+		'label'               => __( 'product', 'navigator' ),
+		'description'         => __( 'New Products', 'navigator' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', ),
 		'taxonomies'          => array( 'category', 'post_tag' ),

@@ -2,7 +2,7 @@
 /**
  * Template part for Categories Widget
  *
- * @package Mezzanine
+ * @package Navigator
  */
 ?>
 <aside class="widget widget_categories">

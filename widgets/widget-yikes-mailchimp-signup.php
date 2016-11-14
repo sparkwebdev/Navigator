@@ -2,7 +2,7 @@
 /**
  * Template part for Mailchimp Signup (Yikes plugin)
  *
- * @package Mezzanine
+ * @package Navigator
  */
 ?>
 <aside class="widget widget_newsletter_signup">
