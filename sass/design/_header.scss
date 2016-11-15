@@ -1,0 +1,35 @@
+.site-header {
+	padding: $spacing__small $spacing__medium;
+	
+	@include bp-nav-switch() {
+		padding: $spacing__large $spacing__medium;
+		
+		.section-inner {
+			position: relative;
+		}
+		
+		.main-navigation {
+			position: absolute;
+			bottom: 6px;
+			right: 0;
+			width: auto;
+			padding: 0;
+		}
+		
+	}
+	.site-branding {
+		width: 126px;
+		height: 55px;
+		display: block;
+		background: url(img/logo.png) no-repeat;
+		background-size: 100% 100%;
+		@include bp-nav-switch() {
+			width: 194px;
+			height: 85px;
+		}
+		* {
+			margin: 0;
+		}
+	}
+	
+}

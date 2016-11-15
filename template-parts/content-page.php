@@ -10,6 +10,58 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	
+	<?php
+	// Output Pages (Temp)
+	if (is_page(2)) {
+		get_template_part( '/template-parts/components/component', 'page_home' );
+	}
+	if (is_page(5)) {
+		get_template_part( '/template-parts/components/component', 'page_services' );
+	}
+	if (is_page(7)) {
+		get_template_part( '/template-parts/components/component', 'page_network' );
+	}
+	if (is_page(9)) {
+		get_template_part( '/template-parts/components/component', 'page_how' );
+	}
+	if (is_page(11)) {
+		get_template_part( '/template-parts/components/component', 'page_clients' );
+	}
+	if (is_page(13)) {
+		get_template_part( '/template-parts/components/component', 'page_about' );
+	}
+	if (is_page(15)) {
+		get_template_part( '/template-parts/components/component', 'page_contact' );
+	}
+	// Output Page Intro
+	//get_template_part( '/template-parts/components/component', 'page_intro' );
+	?>
+	<?php
+	if (function_exists('get_field')) {
+		// check if the flexible content field has rows of data
+		if( have_rows('page_content') ) {
+		     // loop through the rows of data
+		    while ( have_rows('page_content') ) {
+			    the_row();
+				$component = get_row_layout();
+				switch ($component) {
+				    case 'general_content':
+						get_template_part( '/template-parts/components/component', 'general_content' );
+				        break;
+				    case 'general_content_two_column':
+						get_template_part( '/template-parts/components/component', 'general_content_two_column' );
+				        break;
+				    case 'tabs':
+						get_template_part( '/template-parts/components/component', 'tabs' );
+				        break;
+				}
+		    }
+		}
+	}
+	?>
+	<?php /*
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
@@ -23,19 +75,6 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'navigator' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
+	*/ ?>
 </article><!-- #post-## -->
 

@@ -13,3 +13,11 @@ body {
 @import "content";
 @import "footer";
 @import "page-specific";
+
+.section {
+	.section-inner {
+		max-width: $size__content-max-width;
+		@include center-block;
+		width: 100%;
+	}
+}

@@ -8,14 +8,14 @@ textarea {
 	font-weight: $font__weight-normal;
 	line-height: $font__line-height-body;
 
-	/* Better Font Rendering
+	/* Better Font Rendering */
     -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale; */
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
 	
-	@include font-size($font__size-smaller);
+	@include font-size($font__size-body);
 
 	@include bp-nav-switch {
 		

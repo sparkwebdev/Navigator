@@ -1,6 +1,6 @@
 // Brand Colour 1 (Teal)
-$color__brand-1: #15818B;
-$color__brand-1-mid: mix($color__brand-1, white, 50%);
+$color__brand-1: #00b0b9;
+$color__brand-1-mid: #a6e3e7;
 $color__brand-1-light: mix($color__brand-1, white, 20%);
 // $color__brand-1-dark: mix($color__brand-1, black, 20%);
 // $color__brand-1-darker: mix($color__brand-1, black, 50%);
@@ -27,7 +27,7 @@ $color__tone-0: #fff; // White
 $color__tone-100: #000; // Black
 $color__tone-20: mix($color__tone-100, white, 20%);
 $color__tone-40: mix($color__tone-100, white, 40%);
-$color__tone-60: mix($color__tone-100, white, 60%);
+$color__tone-60: #333f48;
 $color__tone-80: mix($color__tone-100, white, 80%);
 
 // Text

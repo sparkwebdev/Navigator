@@ -1,20 +1,3 @@
-// Site Widths
-$size__site-main: 100%;
-$size__site-sidebar: 32.1833333%;
-$size__site-sidebar-wide: 32.1833333%;
-
-// Site Content Widths
-$size__content-max-width: 60em;
-$size__content-max-width-narrow: 700px;
-//$size__content-max-width-wide: 75em;
-//$size__content-max-width-features: 51.875em;
-//$size__content-max-width-narrower: 26em;
-//$size__content-max-width-narrowest: 18em;
-//$size__content-max-width-content: 42.5em;
-
-// Gutter Widths
-$size__site-gutters: 1.725%;
-
 // Spacing
 $spacing__smallest: 0.2em;
 $spacing__smaller: 0.5em;
@@ -25,6 +8,23 @@ $spacing__larger: 2.6em;
 $spacing__largest: 4em;
 $spacing__forms-input-padding: $spacing__smaller;
 $spacing__forms-button-padding: $spacing__small $spacing__medium;
+
+// Site Widths
+$size__site-main: 100%;
+$size__site-sidebar: 32.1833333%;
+$size__site-sidebar-wide: 32.1833333%;
+
+// Site Content Widths
+$size__content-max-width: 60em + $spacing__medium + $spacing__medium;
+$size__content-max-width-narrow: 700px;
+//$size__content-max-width-wide: 75em;
+//$size__content-max-width-features: 51.875em;
+//$size__content-max-width-narrower: 26em;
+//$size__content-max-width-narrowest: 18em;
+//$size__content-max-width-content: 42.5em;
+
+// Gutter Widths
+$size__site-gutters: 1.725%;
 
 // Misc
 //$header__height-mobile: 0;

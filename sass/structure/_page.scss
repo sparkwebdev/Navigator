@@ -1,10 +1,10 @@
-#page {
+/* #page {
 	max-width: $size__content-max-width;
 	@include center-block;
 	width: 100%;
 }
 
-/* Full height (fixed footer)
+Full height (fixed footer)
 .flexbox #page {
 	display: flex;
 	min-height: 100vh;

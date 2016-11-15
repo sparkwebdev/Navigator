@@ -2,25 +2,60 @@
 .site-footer {
 
 	text-align: center;
-	color: $color__brand-2-light;
+	color: #fff;
 	background: $color__brand-1;
 	padding: $spacing__medium;
-
-	@include bp-medium {
-		text-align: left;
+	
+	.col {
+		@include font-size($font__size-smaller);
+		&:last-child {
+			margin-top: $spacing__medium;
+			text-transform: uppercase;
+		}
 	}
 
-	.site-info {
-
-		#site-info-copyright {
-
-			p {
-				@include font-size($font__size-smallprint);
+	@include bp-col-switch {
+		padding: $spacing__small $spacing__medium;
+		text-align: left;
+	
+		.col {
+			line-height: 43px;
+			&:last-child {
+				text-align: right;
+				margin-top: 0;
 			}
+		}
+		.col:last-child {
 		}
 	}
 
 	a {
-		color: $color__brand-2-light;
+		color: #fff;
+	}
+	
+	.social-links {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			a {
+				display: block;
+				width: 43px;
+				height: 43px;
+				background: url(img/sprite.png);
+				background-size: 200% 100%;
+			}
+			&:first-child {
+				margin-right: $spacing__small;
+			}
+			&.social-link-linkedin {
+				margin-left: $spacing__smallest;
+				a {
+					background-position: -100% 0;
+				}
+			}
+		}
 	}
 }
