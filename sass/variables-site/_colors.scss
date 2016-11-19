@@ -25,8 +25,9 @@ $color__site-2-light: mix($color__site-2, white, 20%);
 // Tones
 $color__tone-0: #fff; // White
 $color__tone-100: #000; // Black
-$color__tone-20: mix($color__tone-100, white, 20%);
-$color__tone-40: mix($color__tone-100, white, 40%);
+$color__tone-10: mix(#333f48, white, 10%);
+$color__tone-20: mix(#333f48, white, 20%);
+$color__tone-40: mix(#333f48, white, 40%);
 $color__tone-60: #333f48;
 $color__tone-80: mix($color__tone-100, white, 80%);
 

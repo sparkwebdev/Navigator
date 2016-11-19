@@ -60,7 +60,7 @@ big {
 }
 
 small {
-	@include font-size($font__size-small);
+	@include font-size($font__size-smaller);
 }
 
 hr {

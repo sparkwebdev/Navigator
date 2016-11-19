@@ -33,6 +33,32 @@
 
 <?php wp_footer(); ?>
 
+<script>
+	$('.feature-carousel .bx-slider').bxSlider({
+		infiniteLoop: false,
+		hideControlOnEnd: true,
+		controls: true,
+		pager: false,
+		slideWidth: 654,
+		minSlides: 3,
+		maxSlides: 5,
+		slideMargin: 1
+	});
+	$('.owl-carousel').owlCarousel({
+	    margin:60,
+	    loop:false,
+	    autoWidth:true,
+		nav:true,
+	    navRewind: false,
+		dots:false,
+		navText : ['<span class="screen-reader-text">Previous</span>','<span class="screen-reader-text">Next</span>'],
+	});
+	
+	
+	$('.feature-expander > li h3').hover(function() {
+		$(this).next().slideToggle();
+	});
+</script>
 
 </body>
 </html>

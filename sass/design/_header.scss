@@ -1,8 +1,14 @@
 .site-header {
-	padding: $spacing__small $spacing__medium;
+	
+		
+	.main-navigation {
+		.menu-main-menu-container .menu {
+			padding: $spacing__large 0;
+		}
+	}
+	
 	
 	@include bp-nav-switch() {
-		padding: $spacing__large $spacing__medium;
 		
 		.section-inner {
 			position: relative;
@@ -13,7 +19,9 @@
 			bottom: 6px;
 			right: 0;
 			width: auto;
-			padding: 0;
+			.menu-main-menu-container .menu {
+				padding: 0;
+			}
 		}
 		
 	}
@@ -23,6 +31,8 @@
 		display: block;
 		background: url(img/logo.png) no-repeat;
 		background-size: 100% 100%;
+			width: 194px;
+			height: 85px;
 		@include bp-nav-switch() {
 			width: 194px;
 			height: 85px;

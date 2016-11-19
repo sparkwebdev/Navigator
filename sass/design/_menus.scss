@@ -3,7 +3,6 @@
 	display: block;
 	float: left;
 	width: 100%;
-	padding: $spacing__large 0;
 
 	ul {
 		list-style: none;
@@ -22,6 +21,12 @@
 				text-decoration: none;
 				color: inherit;
 				@include font-size($font__size-smallprint);
+			}
+			
+			&:last-child {
+				a {
+					padding-right: 0;
+				}
 			}
 		
 			&:hover > a,
@@ -62,24 +67,25 @@
 			}
 			
 		}
-		
+		border-radius: 0;
 		position: absolute;
-		top: $spacing__medium;
-		right: $spacing__medium;
+		top: $spacing__large;
+		right: $spacing__large;
 		width: 18px;
-		height: 1em;
-		line-height: 1em;
+		height: $spacing__medium;
 		background: transparent;
 		border: 0;
 	    text-align: left;
 	    width: 2.75em;
-	    padding: 0 25px 0 0;
+	    padding: 0 26px 0 0;
 	    box-sizing: content-box;
 	    border-color: transparent;
 	    background: transparent !important;
 		font-weight: bold;
 		color: $color__link;		
-		@include font-size($font__size-smaller);
+		@include font-size($font__size-smallprint);
+		text-transform: uppercase;
+		font-family: $font__headings;
 
 		&:before {
 			position: absolute;
@@ -97,8 +103,6 @@
 		&:active {
 			background: transparent;
 			outline: none;
-			color: inherit;
-			color: $color__link-hover;
 		}
 		
 	}

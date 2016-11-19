@@ -1,5 +1,5 @@
 /* Footer  */
-.site-footer {
+.section.site-footer {
 
 	text-align: center;
 	color: #fff;
@@ -15,7 +15,6 @@
 	}
 
 	@include bp-col-switch {
-		padding: $spacing__small $spacing__medium;
 		text-align: left;
 	
 		.col {
@@ -45,7 +44,7 @@
 				width: 43px;
 				height: 43px;
 				background: url(img/sprite.png);
-				background-size: 200% 100%;
+				background-size: auto 200%;
 			}
 			&:first-child {
 				margin-right: $spacing__small;

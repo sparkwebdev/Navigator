@@ -7,7 +7,7 @@ $spacing__large: 2em;
 $spacing__larger: 2.6em;
 $spacing__largest: 4em;
 $spacing__forms-input-padding: $spacing__smaller;
-$spacing__forms-button-padding: $spacing__small $spacing__medium;
+$spacing__forms-button-padding: ($spacing__medium + $spacing__smallest) $spacing__larger;
 
 // Site Widths
 $size__site-main: 100%;
@@ -15,7 +15,7 @@ $size__site-sidebar: 32.1833333%;
 $size__site-sidebar-wide: 32.1833333%;
 
 // Site Content Widths
-$size__content-max-width: 60em + $spacing__medium + $spacing__medium;
+$size__content-max-width: 57.125em + $spacing__medium + $spacing__medium;
 $size__content-max-width-narrow: 700px;
 //$size__content-max-width-wide: 75em;
 //$size__content-max-width-features: 51.875em;

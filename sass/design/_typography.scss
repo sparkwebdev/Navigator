@@ -39,7 +39,7 @@ strong {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: $font__weight-normal;
+	//font-weight: $font__weight-normal;
 	font-family: $font__headings;
 	color: $color__brand-1;
 }
@@ -48,7 +48,7 @@ h1 {
 	line-height: 1;
 	margin-bottom: 0;
 	@include font-size($font__size-h2);
-	@include bp-medium {
+	@include bp-nav-switch {
 		@include font-size($font__size-h1);
 	}
 }
@@ -57,7 +57,7 @@ h2 {
 	line-height: $font__line-height-tight;
 	margin-bottom: $spacing__smaller;
 	@include font-size($font__size-h3);
-	@include bp-medium {
+	@include bp-nav-switch {
 		@include font-size($font__size-h2);
 	}
 }
@@ -66,7 +66,7 @@ h3 {
 	line-height: $font__line-height-tight;
 	margin-bottom: $spacing__small;
 	@include font-size($font__size-h4);
-	@include bp-medium {
+	@include bp-nav-switch {
 		@include font-size($font__size-h3);
 	}
 }
