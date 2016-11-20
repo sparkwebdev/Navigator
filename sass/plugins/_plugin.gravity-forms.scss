@@ -3,65 +3,123 @@
 	
 	.gform_wrapper {
 		
+		form {
+			margin: 0;
+		}
+		
 		.gform_body {
 			
 			ul {
 				list-style: none;
 				padding: 0;
+				li {
+					margin-bottom: $spacing__medium;
+					
+					input, textarea {
+						border-color: $color__tone-60;
+						border-width: 2px;
+						margin-left: -1px;
+						&:focus {
+							border-color: $color__brand-1;
+							box-shadow: $shadow__box;
+						}
+					}
+					label {
+						margin-bottom: $spacing__smallest;
+						display: block;
+					}
+				}
 			}
-			
-			/*input[type="text"],
-			input[type="email"],
-			input[type="url"],
-			input[type="password"],
-			input[type="search"] {
-				padding: $spacing__forms-input-padding;
-			}
-			textarea {
-				padding: $spacing__forms-input-padding;
-			}*/
 		
 		}
 		
-		/*.gform_footer {
-			
-			&.left_label {
-				
-				margin-left: 29%;
-			
-				input[type="submit"] {
-					
-					margin-left: 1em;
-				}
+		input[type="button"], input[type="reset"], input[type="submit"] {
+			padding: ($spacing__small + $spacing__smallest) $spacing__larger;
+			border-color: $color__brand-1;
+			background: $color__brand-1;
+			&:hover,
+			&:focus {
+				background: $color__brand-1-mid;
 			}
+		}
+		
+		/* Validation styles */
+		.gfield_description.validation_message {
+			border: none;
+			padding: 0;
+			margin: -2px 0 0 1px;
+			@include font-size($font__size-smallprint);
+		    border-left: 2px solid rgba(255,0,0,0.5);
+		    padding: $spacing__smaller $spacing__small;
+		    position: relative;
+		    z-index: -1;
+		    color: rgba(#fff, 0.75);
+		}
+		.validation_error {
+		    padding: $spacing__smaller $spacing__small;
+			margin: 0 0 $spacing__small 0;
+			@include font-size($font__size-smaller);
+		    background: rgba(255,0,0,0.5);
+		}
+		img.gform_ajax_spinner {
+			position: absolute;
+			right: 0;
+			margin-top: -$spacing__larger;
+			opacity: 0.2;
+		}
+		
+		/*
+		img.gform_ajax_spinner {
+			display: inline-block;
+			width: 5em;
+			height: 5em;
+			margin: 0 .5em;
+			font-size: 12px;
+			text-indent: 999em;
+			overflow: hidden;
+			animation: spin 1s infinite steps(8);
+			font-size: 6px;
+		}
+		
+		@keyframes spin {
+			to { transform: rotate(1turn); }
+		}
+		
+		.gform_ajax_spinner:before,
+		.gform_ajax_spinner:after,
+		.gform_ajax_spinner > div:before,
+		.gform_ajax_spinner > div:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 2.25em;
+			width: .5em;
+			height: 1.5em;
+			border-radius: .2em;
+			background: red;
+			box-shadow: 0 3.5em #eee;
+			transform-origin: 50% 2.5em;
+		}
+
+		.gform_ajax_spinner:before {
+			background: red;
+		}
+		
+		.gform_ajax_spinner:after {
+			transform: rotate(-45deg);
+			background: red;
+		}
+		
+		.gform_ajax_spinner > div:before {
+			transform: rotate(-90deg);
+			background: red;
+		}
+		
+		.gform_ajax_spinner > div:after {
+			transform: rotate(-135deg);
+			background: red;
 		}*/
 	
 	}
-	
-	/*@media screen and (max-width: 29.9375em) {
-		.gform_wrapper .left_label li.field_sublabel_below .gfield_label,
-		.gform_wrapper .left_label input.large, .gform_wrapper .left_label select.large, .gform_wrapper .left_label textarea.large, .gform_wrapper .left_label textarea.medium, .gform_wrapper .left_label textarea.small, .gform_wrapper .right_label input.large, .gform_wrapper .right_label select.large, .gform_wrapper .right_label textarea.large, .gform_wrapper .right_label textarea.medium, .gform_wrapper .right_label textarea.small {
-	
-			width: 100%;
-			float: none;
-			display: block;
-	
-		}
-		.gform_wrapper .left_label ul.gfield_checkbox,
-		.gform_wrapper .left_label ul.gfield_radio,
-		.gform_wrapper .right_label ul.gfield_checkbox,
-		.gform_wrapper .right_label ul.gfield_radio {
-			margin-left: 0 !important;
-		}
-		
-	}
-	
-	.gform_confirmation_wrapper  {
-		
-		margin-bottom: $spacing__larger !important;
-		font-weight: $font__weight-bold;
-		@include font-size($font__size-h4);
-		
-	}*/
 
 }

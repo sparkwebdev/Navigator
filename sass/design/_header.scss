@@ -1,5 +1,10 @@
 .site-header {
-	
+	padding-top: $spacing__small;
+	padding-bottom: $spacing__small;
+	@include bp-nav-switch() {
+		padding-top: $spacing__large;
+		//padding: $spacing__large $spacing__medium $spacing__larger $spacing__medium;
+	}
 		
 	.main-navigation {
 		.menu-main-menu-container .menu {

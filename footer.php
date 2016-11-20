@@ -54,7 +54,7 @@
 		navText : ['<span class="screen-reader-text">Previous</span>','<span class="screen-reader-text">Next</span>'],
 	});
 	
-	
+	$('.feature-expander > li ul').hide();
 	$('.feature-expander > li h3').hover(function() {
 		$(this).next().slideToggle();
 	});

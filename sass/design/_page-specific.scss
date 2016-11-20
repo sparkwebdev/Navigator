@@ -1,6 +1,93 @@
 /* Home page */
 .home {
-	
+	.feature-dual-panel {
+		.section-title-half {
+			max-width: 9.2em;
+		}
+		.section-content:before {
+			color: $color__brand-1;
+		}
+		.section-title:before {
+			top: $spacing__small + $spacing__small;
+		}
+	}
+}
+
+/* Join Our Network page */
+.page-id-7 {
+	.feature-dual-panel {
+		&.with-tint-dark .section-title {
+			color: $color__text-body;
+			&:before {
+				background-color: $color__brand-1;
+			}
+			@include bp-small() {
+				margin-left: 25%;
+			}
+		}
+		@include bp-small() {
+			padding-top: $spacing__largest;
+			.section-content {
+				position: static;
+				&.section-content-right .section-image.section-image-edge {
+					top: -$spacing__larger;
+					bottom: 10em;
+					background-repeat: no-repeat;
+					background-position: 65% center;
+					@include bp-large() {
+						background-position: right center;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* How We Work page */
+.page-id-9 {
+	.feature-dual-panel {
+		.section-title {
+			color: $color__brand-1;
+			&:before {
+				top: $spacing__small + $spacing__small;
+			}
+		}
+		@include bp-small() {
+			//padding-top: $spacing__largest;
+			.section-content {
+				position: static;
+				.section-image.section-image-edge {
+					top: $spacing__largest - $spacing__small;
+					bottom: $spacing__largest;
+				}
+			}
+		}
+	}
+}
+
+/* About page */
+.page-id-13 {
+	.feature-dual-panel {
+		.section-content {
+			margin-top: $spacing__largest + $spacing__medium;
+			&:before {
+				position: absolute;
+				top: -$spacing__larger;
+			}
+		}
+	}
+}
+
+/* Get In Touch page */
+.page-id-15 {
+	.feature-dual-panel {
+		&:last-child {
+			padding-bottom: 0;
+		}
+		.section-content .section-image {
+			bottom: $spacing__largest;
+		}
+	}
 }
 
 /* Blog */

@@ -41,12 +41,13 @@ strong {
 h1, h2, h3, h4, h5, h6 {
 	//font-weight: $font__weight-normal;
 	font-family: $font__headings;
-	color: $color__brand-1;
+	line-height: $font__line-height-tight;
 }
 
 h1 {
 	line-height: 1;
 	margin-bottom: 0;
+	color: $color__brand-1;
 	@include font-size($font__size-h2);
 	@include bp-nav-switch {
 		@include font-size($font__size-h1);
@@ -54,8 +55,8 @@ h1 {
 }
 
 h2 {
-	line-height: $font__line-height-tight;
 	margin-bottom: $spacing__smaller;
+	color: $color__brand-1;
 	@include font-size($font__size-h3);
 	@include bp-nav-switch {
 		@include font-size($font__size-h2);
@@ -63,8 +64,8 @@ h2 {
 }
 
 h3 {
-	line-height: $font__line-height-tight;
 	margin-bottom: $spacing__small;
+	color: $color__brand-1;
 	@include font-size($font__size-h4);
 	@include bp-nav-switch {
 		@include font-size($font__size-h3);
@@ -78,10 +79,10 @@ h4 {
 
 h5 {
 	@include font-size($font__size-h5);
-	margin-bottom: $spacing__medium;
+	margin-bottom: $spacing__small;
 }
 
 h6 {
 	@include font-size($font__size-h6);
-	margin-bottom: $spacing__medium;
+	margin-bottom: $spacing__small;
 }

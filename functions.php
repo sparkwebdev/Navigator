@@ -175,3 +175,11 @@ function gform_form_input_autocomplete( $input, $field, $value, $lead_id, $form_
 	}
 	return $input;
 }
+
+
+// Changes the default Gravity Forms AJAX spinner.
+// https://thomasgriffin.io/change-default-gravity-forms-ajax-spinner/ */
+add_filter( 'gform_ajax_spinner_url', 'tgm_io_custom_gforms_spinner' );
+function tgm_io_custom_gforms_spinner( $src ) {
+    return get_stylesheet_directory_uri() . '/img/ajax-loader.gif';
+}

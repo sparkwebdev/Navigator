@@ -5,10 +5,10 @@ input[type="submit"],
 .btn,
 .btn:visited {
 	border: $border__width-button solid;
-	border-color: $color__brand-1;
+	border-color: $color__text-body;
 	background: transparent;
 	border-radius: $border__radius-button;
-	color: $color__brand-1;
+	color: $color__text-body;
 	@include font-size($font__size-smaller);
 	text-decoration: none;
 	font-weight: $font__weight-bold;
@@ -43,9 +43,9 @@ input[type="submit"],
 	}
 
 	&:hover {
-		border-color: $color__tone-60;
-		color: $color__tone-60;
-		position: relative;
+		border-color: $color__brand-1;
+		color: $color__brand-1;
+		//position: relative;
 		&:before {
 			//height: 100%;
 		}
