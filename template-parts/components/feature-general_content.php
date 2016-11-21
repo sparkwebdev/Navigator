@@ -5,6 +5,8 @@ if( function_exists('get_field') ) {
 	$title = get_sub_field('general_content_title');
 	$subtitle = get_sub_field('general_content_subtitle');
 	$content = get_sub_field('general_content_content');
+	$contentRaw = get_sub_field('general_content_content', false, false);
+	
 	$pageLink = get_sub_field('link_type');
 	$pageLinkText = "Read More";
 	if ($pageLink) {
@@ -24,12 +26,19 @@ if( function_exists('get_field') ) {
 	
 	$optionTint = get_sub_field('general_content_option_tint');
 	$optionTwoColumn = get_sub_field('general_content_option_two_column');
+	$optionTintedFeature = get_sub_field('general_content_tinted_feature');
 	
 	if ($icon) {
 		$titleClass = "icon-title icon-".$icon;
 	}
+	if (strpos($contentRaw, '[galleries') !== false) {
+		$containerClass .= " with-gallery";
+	}
 	if ($optionTint) {
 		$containerClass .= " with-tint-dark";
+	}
+	if ($optionTintedFeature) {
+		$containerClass .= " with-tinted-feature";
 	}
 	if ($optionTwoColumn) {
 		$contentClass .= " with-two-columns";

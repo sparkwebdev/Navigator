@@ -1,0 +1,27 @@
+/* Custom styles for the Wordpress admin area 
+	Purely for presentation
+	
+*/
+
+/* Advanced Custom Fields - Section titles */
+#poststuff .acf-postbox h2,
+.acf-flexible-content .layout .acf-fc-layout-handle {
+    background-color: #23282D;
+    color: #fff;
+}
+.acf-flexible-content .layout .acf-fc-layout-handle {
+    background-color: #0073aa;
+}
+/* Advanced Custom Fields - Page Intro content field */
+.acf-field[data-name="page_intro_text"] textarea.wp-editor-area,
+.acf-field[data-name="page_intro_text"] .acf-editor-wrap iframe {
+    max-height: 200px;
+}
+/* Advanced Custom Fields - Page Intro & Banner Slideshow preview images */
+.acf-field[data-name="page_intro_background_image"] .acf-image-uploader img,
+.acf-field[data-name="banner_slideshow"] .acf-image-uploader img,
+.acf-field[data-name="page_content"] .acf-image-uploader img {
+    max-height: 200px;
+    width: auto;
+    max-width: 100%;
+}

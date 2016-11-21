@@ -8,6 +8,11 @@
 	
 	.col {
 		@include font-size($font__size-smaller);
+		&:first-child {
+			br {
+				display: block;
+			}
+		}
 		&:last-child {
 			margin-top: $spacing__medium;
 			text-transform: uppercase;
@@ -19,6 +24,11 @@
 	
 		.col {
 			line-height: 43px;
+			&:first-child {
+				br {
+					display: none;
+				}
+			}
 			&:last-child {
 				text-align: right;
 				margin-top: 0;

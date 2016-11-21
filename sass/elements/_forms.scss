@@ -9,7 +9,7 @@ input[type="submit"],
 	background: transparent;
 	border-radius: $border__radius-button;
 	color: $color__text-body;
-	@include font-size($font__size-smaller);
+	@include font-size($font__size-smallprint);
 	text-decoration: none;
 	font-weight: $font__weight-bold;
 	line-height: 1.2;
@@ -19,6 +19,9 @@ input[type="submit"],
 	display: inline-block;
 	text-align: center;
 	text-transform: uppercase;
+	@include bp-medium() {
+		@include font-size($font__size-smaller);
+	}
 
 	+ button,
 	+ input[type="button"],
@@ -56,25 +59,6 @@ input[type="submit"],
 		outline: none;
 	}
 
-	/*&.brand-1 {
-		border-color: $color__brand-1-light;
-		background: $color__brand-1-light;
-		color: $color__tone-100;
-
-		&:hover {
-			border-color: $color__brand-1-mid;
-			background: $color__brand-1-mid;
-		}
-
-		&:active,
-		&:active,
-		&:focus {
-			border-color: $color__tone-0;
-			background: $color__brand-1;
-			color: $color__tone-0;
-		}
-	}*/
-
 }
 
 form {
@@ -101,7 +85,7 @@ input[type="password"],
 input[type="search"],
 textarea,
 select {
-	color: $color__tone-60;
+	color: $color__tone-80;
 	border: $border__width-site solid $color__brand-1;
 	border-radius: $border__radius-input;
 	//margin-bottom: $spacing__medium;

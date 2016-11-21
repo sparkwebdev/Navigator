@@ -25,7 +25,7 @@
 			
 			&:last-child {
 				a {
-					padding-right: 0;
+					margin-right: -($spacing__small + $spacing__smallest);
 				}
 			}
 		
@@ -57,22 +57,18 @@
 		display: none;
 		
 		.js & {
-			
 			display: block;
-			
 			@include bp-nav-switch {
-				
 				display: none;
-				
 			}
-			
 		}
 		border-radius: 0;
 		position: absolute;
 		top: $spacing__large;
 		right: $spacing__large;
 		width: 18px;
-		height: $spacing__medium;
+		//height: $spacing__medium;
+		line-height: 1.5;
 		background: transparent;
 		border: 0;
 	    text-align: left;

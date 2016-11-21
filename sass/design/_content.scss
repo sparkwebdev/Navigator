@@ -16,7 +16,6 @@
 		> *:last-child,
 		.section-content > *:last-child {
 			margin-bottom: 0;
-			//border: solid red 1px;
 		}
 		
 		&.section-inner-narrow {
@@ -27,8 +26,7 @@
 
 /* Features — Spacing */
 .feature-dual-panel + .feature-general-content {
-	padding-top: $spacing__small;
-	border: solid green 1px;
+	//padding-top: $spacing__medium;
 }
 
 /* Feature — General Content */
@@ -40,14 +38,8 @@
 		padding-bottom: $spacing__larger;
 	}
 	+ .feature-general-content {
-		//margin-top: $spacing__medium;
-		border: solid green;
-		@include bp-medium() {
-			//margin-top: $spacing__larger;
-		}
 		&:last-of-type {
 			margin-top: 0;
-			border: solid yellow;
 		}
 	}
 	.section-inner {
@@ -61,11 +53,13 @@
 			margin-bottom: $spacing__larger;
 		}
 	}
-	.btn {
-		margin-top: $spacing__small;
+	.section-subtitle {
+		font-weight: $font__weight-normal;
+		font-family: inherit;
+		line-height: inherit;
 	}
 	&.with-tint-dark {
-		background: $color__tone-60;
+		background: $color__tone-80;
 		color: #fff;
 		* {
 			color: #fff;
@@ -77,6 +71,65 @@
 			&:focus {
 				border-color: $color__brand-1;
 				color: $color__brand-1;
+			}
+		}
+	}
+	&.with-tinted-feature {
+		text-align: center;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+		.section-inner {
+			background: $color__tone-20;
+			padding: $spacing__larger $spacing__large $spacing__largest $spacing__large;
+			margin-top: 0;
+			margin-bottom: -$spacing__large;
+			@include bp-nav-switch() {
+				padding-left: $spacing__largest;
+				padding-right: $spacing__largest;
+			}
+			&:before {
+				content: "";
+				display: block;
+				margin: 0 auto $spacing__large auto;
+				width: 40px;
+				border-top: solid 5px;
+				color: $color__brand-1;
+			}
+			&.section-inner-narrow {
+				background: transparent;
+				padding: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				max-width: $size__content-max-width;
+				&:before {
+					content: none;
+				}
+			}
+			h3 {
+				@include font-size($font__size-h3);
+				font-weight: $font__weight-bold;
+				font-family: $font__headings;
+				line-height: $font__line-height-tighter;
+				position: relative;
+				padding-left: 10%;
+				padding-right: 10%;
+				@include bp-nav-switch() {
+					@include font-size($font__size-h2);
+				}
+				&:before {
+				    content: "";
+				    position: absolute;
+				    z-index: -2;
+				    background: $color__tone-20;
+				    top: 0.5em;
+				    bottom: 0;
+				    right: 0;
+				    left: 0;
+				}
+			}
+			.btn {
+				background-color: #fff;
 			}
 		}
 	}
@@ -95,8 +148,8 @@
 			column-gap: $spacing__largest;
 		}
 	}
-	
 }
+
 
 /* Feature — Dual Panel */
 .feature-dual-panel {
@@ -184,7 +237,7 @@
 				position: absolute;
 				right: 0;
 				left: 50%;
-				top: 0;
+				top: $spacing__smallest;
 				bottom: -$spacing__larger;
 				z-index: 2;
 				&.section-image-portrait {
@@ -239,11 +292,14 @@
 	&.with-tint-dark {
 		.section-title {
 			&:before {
-				background: $color__tone-60;
+				background: $color__tone-80;
 			}
 			color: $color__brand-1;
 		}
 		color: #fff;
+		* {
+			color: #fff;
+		}
 		.btn, button, input[type="button"], input[type="reset"], input[type="submit"] {
 			border-color: #fff;
 			color: #fff;
@@ -263,11 +319,8 @@
 	text-transform: uppercase;
 	text-align: center;
 	+ .section-subtitle {
-		font-weight: $font__weight-normal;
 		color: inherit;
-		font-family: inherit;
-		margin-top: $spacing__small;
-		line-height: inherit;
+		margin-top: $spacing__smaller;
 	}
 	&:before {
 		width: 40px;
@@ -297,43 +350,129 @@
 			background-position: 80% 0;
 		}
 	}
+	&.icon-network {
+		color: inherit;
+		&:before {
+		width: 60px;
+		height: 60px;
+			content: "";
+			background-position: 90% 0;
+		}
+	}
 	
 	+ p {
 		text-align: center;
 	}
 }
 
+
+
+/* Feature - Galleries — Image Grid */
+.feature-image-grid {
+	.col {
+		.col-content {
+			height: 200px;
+			width: 100%;
+		}
+		.display-table & {
+			display: table;
+			.col-content {
+			    display: table-cell;
+			    vertical-align: middle;
+			}
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			margin: 0 auto;
+		}
+		text-align: center;
+		padding: $spacing__smaller $spacing__medium;
+	}
+}
+
+/* Feature - Expander (drop-down list) */
+.feature-expander {
+	list-style: none;
+	padding: 0;
+	> li {
+		padding: $spacing__medium 0;
+		border-top: solid 1px $color__brand-1;
+		&:last-child {
+			border-bottom: solid 1px $color__brand-1;
+		}
+		@include bp-medium() {
+			border-bottom: solid 1px $color__brand-1;
+		}
+	}
+	ul {
+		color: $color__brand-1;
+		padding: 0 0 0 ($spacing__small + $spacing__smaller);
+		margin: 0;
+		li {
+			padding: 0;
+			&:first-child {
+				padding-top: $spacing__medium;
+			}
+		}
+	}
+	h3 {
+		@include font-size($font__size-h2);
+		margin-bottom: 0;
+		color: $color__text-body;
+	}
+	.js & {
+		ul {
+			display: none;
+		}
+		> li h3:hover {
+			cursor: pointer;
+			color: $color__brand-1;
+		}
+	}
+	#page & {
+		margin-bottom: $spacing__large;
+		@include bp-medium() {
+			margin-bottom: $spacing__largest;
+	
+			> li {
+				float: left;
+				width: 30%;
+				margin-right: 6%;
+				&:first-child {
+					width: 34%;
+				}
+				&:last-child {
+					width: 24%;
+					margin-right: 0;
+				}
+			}
+		}
+		@include bp-col-switch() {
+			> li {
+				float: left;
+				width: 31%;
+				margin-right: 4%;
+				&:first-child {
+					width: 33%;
+				}
+				&:last-child {
+					width: 28%;
+					margin-right: 0;
+				}
+			}
+			h3 {
+				@include font-size(2.6875);
+				letter-spacing: -0.035em;
+			}
+		}
+	}
+}
+
 /* Carousels (Owl Carousel plugin) */
 .owl-carousel {
 	padding: 0 50px;
-	margin-bottom: $spacing__larger;
-	
-	.owl-item {
-		vertical-align: middle;
-	}
-	.item {
-		max-width: 200px;
-		@include bp-medium() {
-			max-width: none;
-		}
-	}
-	&:after {
-		content: "";
-		position: absolute;
-		right: 50px;
-		width: 25px;
-		top: 0;
-		bottom: 0;
-		background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-		background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-		background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
-		@include bp-medium() {
-			right: 100px;
-			width: 50px;
-		}
-
-	}
+	list-style: none;
 	@include bp-medium() {
 		padding: 0 100px;
 	}
@@ -372,4 +511,73 @@
 	.owl-nav .disabled {
 	    opacity: 0.2;    
 	}
+	
+	&.owl-carousel-variable {
+		.owl-item {
+			vertical-align: middle;
+		}
+		.item {
+			max-width: 200px;
+			@include bp-medium() {
+				max-width: none;
+			}
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			right: 50px;
+			width: 25px;
+			top: 0;
+			bottom: 0;
+			background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+			background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+			background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+			@include bp-medium() {
+				right: 100px;
+				width: 50px;
+			}
+		}
+	}
+	&.owl-slideshow {
+		.owl-item {
+			vertical-align: top; 
+		}
+		.owl-controls {
+			top: $spacing__largest;
+		}
+		text-align: center;
+		.slide-count {
+			@include font-size($font__size-h2);
+			@include bp-small() {
+				@include font-size($font__size-h1);
+				letter-spacing: -0.02em;
+			}
+			@include bp-nav-switch() {
+				@include font-size(5.5625);
+				letter-spacing: -0.035em;
+			}
+			font-family: $font__headings;
+			font-weight: $font__weight-bold;
+			color: $color__brand-1;
+			line-height: $font__line-height-tighter;
+			&:before {
+				content: "";
+				display: block;
+				margin: 0 auto 10px auto;
+				width: 40px;
+				border-top: solid 5px;
+				color: $color__brand-1;
+			}
+			&:after {
+				content: "";
+				display: block;
+				margin: 0 auto $spacing__smaller auto;
+				width: 40px;
+				border-bottom: solid 5px;
+				color: $color__brand-1;
+			}
+		}
+	}
+	
 }

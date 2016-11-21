@@ -17,7 +17,7 @@
 		<div class="section-inner">
 			<div class="cols">
 				<div class="col col-2-3">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Navigator Partnership Ltd</a>, registered in Scotland SC513251
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Navigator Partnership Ltd</a>,<br /> registered in Scotland SC513251
 				</div><!-- .col -->
 				<div class="col col-1-3">
 					<ul class="social-links">
@@ -44,7 +44,7 @@
 		maxSlides: 5,
 		slideMargin: 1
 	});
-	$('.owl-carousel').owlCarousel({
+	$('.owl-carousel-variable').owlCarousel({
 	    margin:60,
 	    loop:false,
 	    autoWidth:true,
@@ -53,9 +53,20 @@
 		dots:false,
 		navText : ['<span class="screen-reader-text">Previous</span>','<span class="screen-reader-text">Next</span>'],
 	});
+	$('.owl-slideshow').owlCarousel({
+	    loop:false,
+	    items: 1,
+		nav:true,
+	    navRewind: false,
+		dots:false,
+		navText : ['<span class="screen-reader-text">Previous</span>','<span class="screen-reader-text">Next</span>'],
+	});
 	
-	$('.feature-expander > li ul').hide();
-	$('.feature-expander > li h3').hover(function() {
+	//$('.feature-expander > li ul').hide();
+	$('.no-touchevents .feature-expander > li h3').click(function() {
+		$(this).next().slideToggle();
+	});
+	$('.touchevents .feature-expander > li h3').hover(function() {
 		$(this).next().slideToggle();
 	});
 </script>

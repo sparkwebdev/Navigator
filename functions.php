@@ -121,40 +121,23 @@ add_action( 'wp_enqueue_scripts', 'navigator_scripts' );
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom post types for this theme.
- */
-// require get_template_directory() . '/inc/custom-post-type.php';
-
-/**
- * Custom taxonomies for this theme.
- */
-// require get_template_directory() . '/inc/custom-taxonomy.php';
-
-/**
  * Custom Wordpress Shortcodes
  */
-// require get_template_directory() . '/inc/shortcodes.php';
+require get_template_directory() . '/inc/shortcodes.php';
 
 /**
- * Woocommerce plugin specific functions
-
-if (function_exists( 'is_woocommerce' )) {
-	require get_template_directory() . '/inc/woocommerce.php';
-} */
-
-/**
- * Custom functions for the admin back-end
+ * Custom functions for the admin back-end */
 if (is_admin()) {
 	require get_template_directory() . '/inc/admin.php';
-} */
+}
 
 
 /**
  * Advanced Custom Fields Plugin
- * Register options page
+ * Register options page */
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page('Site Content');
-} */
+	acf_add_options_page('Galleries');
+}
 
 
 // Disable Autocomplete for Gravity Forms
@@ -183,3 +166,27 @@ add_filter( 'gform_ajax_spinner_url', 'tgm_io_custom_gforms_spinner' );
 function tgm_io_custom_gforms_spinner( $src ) {
     return get_stylesheet_directory_uri() . '/img/ajax-loader.gif';
 }
+
+
+/* 
+ * Change WordPress default gallery output
+ * http://stackoverflow.com/questions/14585538/customise-the-wordpress-gallery-html-layout
+function customGalleryOutput($string, $attr){
+	
+    $output = "<div class=\"owl-carousel\">";
+    $posts = get_posts(array('include' => $attr['ids'],'post_type' => 'attachment'));
+    foreach($posts as $imagePost){
+	    $alt = get_post_meta($imagePost->ID, '_wp_attachment_image_alt', true);
+		$image_attributes = wp_get_attachment_image_src( $imagePost->ID, 'thumbnail' );
+	    if (!$alt) {
+		    $alt = "Gallery image";
+	    }
+		$image_title = $imagePost->post_title;
+        $output .= '<div class="item" style="width:'.$image_attributes[1].'px;"><img src="'.wp_get_attachment_image_src($imagePost->ID, 'large')[0].'" alt="'.$alt.'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" title="'.$image_title.'" /></div>';
+    }
+    $output .= "</div>";
+    
+    return $output;
+    
+}
+add_filter('post_gallery', 'customGalleryOutput', 10, 2); */

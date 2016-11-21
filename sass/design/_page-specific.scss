@@ -13,33 +13,84 @@
 	}
 }
 
-/* Join Our Network page */
-.page-id-7 {
+/* Our Services page */
+.page-id-5 {
 	.feature-dual-panel {
-		&.with-tint-dark .section-title {
-			color: $color__text-body;
-			&:before {
-				background-color: $color__brand-1;
+		&:first-of-type {
+			.section-title {
+				&:before {
+					top: $spacing__small + $spacing__small;
+				}
 			}
 			@include bp-small() {
-				margin-left: 25%;
-			}
-		}
-		@include bp-small() {
-			padding-top: $spacing__largest;
-			.section-content {
-				position: static;
-				&.section-content-right .section-image.section-image-edge {
-					top: -$spacing__larger;
-					bottom: 10em;
-					background-repeat: no-repeat;
-					background-position: 65% center;
-					@include bp-large() {
-						background-position: right center;
+				.section-content {
+					&.section-content-right .section-image.section-image-edge {
+						top: -($spacing__largest + $spacing__medium);
 					}
 				}
 			}
 		}
+	}
+}
+
+/* Join Our Network page */
+.page-id-7 {
+	
+	.feature-dual-panel {
+		&:first-of-type {
+			padding-bottom: 0;
+			&.with-tint-dark .section-title {
+				color: $color__text-body;
+				&:before {
+					background-color: $color__brand-1;
+				}
+				@include bp-small() {
+					margin-left: 25%;
+				}
+			}
+			@include bp-small() {
+				padding-top: $spacing__largest;
+				.section-content {
+					position: static;
+					&.section-content-right .section-image.section-image-edge {
+						top: -$spacing__larger;
+						bottom: 10em;
+						background-repeat: no-repeat;
+						background-position: 65% center;
+						@include bp-large() {
+							background-position: right center;
+						}
+					}
+				}
+			}
+		}
+		&:last-of-type {
+			padding-bottom: 0;
+			background: $color__brand-1;
+			.section-title:before {
+				top: 0;
+			}
+			.section-content:before {
+				color: $color__tone-80;
+			}
+			@include bp-small() {
+				.section-content {
+					.section-image.section-image-edge {
+						top: -$spacing__larger;
+						bottom: $spacing__largest;
+					}
+				}
+			}
+		}
+	}
+	.feature-general-content {
+		&.with-tint-dark {
+			background-color: $color__brand-1;
+			h2 {
+				color: $color__text-body;
+			}
+		}
+		
 	}
 }
 
@@ -68,6 +119,13 @@
 /* About page */
 .page-id-13 {
 	.feature-dual-panel {
+		&:first-of-type {
+			.section-title {
+				&:before {
+					top: $spacing__small + $spacing__small;
+				}
+			}
+		}
 		.section-content {
 			margin-top: $spacing__largest + $spacing__medium;
 			&:before {
