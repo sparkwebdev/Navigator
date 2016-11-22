@@ -43,7 +43,7 @@ function outputSlideshow($items, $title, $background) {
 	if ($items) {
 		$itemImage = $background['url'];
 		if ($itemImage) {
-			$output .= '<span class="slideshow-background" style="background: url('.$itemImage.');"></span>';
+			$output .= '<span class="slideshow-background" style="background-image: url('.$itemImage.');"></span>';
 		}
 		$output .= '<div class="slideshow-container">';
 		if ($title) {
@@ -55,7 +55,7 @@ function outputSlideshow($items, $title, $background) {
 			if ($item['slideshow_item_content']) {
 				$output .= '<li>';
 				$output .= '<span class="slide-count">'.str_pad($i, 2, '0', STR_PAD_LEFT).'</span>';
-				$output .= $item['slideshow_item_content'];
+				$output .= '<p>'.$item['slideshow_item_content'].'</p>';
 				$output .= '</li>';
 			}
 			$i++;
@@ -83,6 +83,41 @@ function outputCircles($items) {
 				$output .= '</p>';
 				$output .= '</li>';
 			}
+		}
+		$output .= '</ul>';
+	}
+	return $output;
+}
+
+function outputTimeline($items) {
+	$output = '';
+	if ($items) {
+		$i = 1;
+		$output .= '<ul class="gallery-timeline clear">';
+		foreach ($items as $item) {
+			if ($item['circles_item_title']) {
+				$itemImage = $item['circles_item_image']['sizes']['medium'];
+				$output .= '<li class="waypoint-animate">';
+				if ($i % 2) {
+					$output .= '<div class="slide-content"><p>';
+					$output .= '<strong class="slide-count">'.str_pad($i, 2, '0', STR_PAD_LEFT).'</strong>';
+					$output .= '<span class="slide-text">'.$item['circles_item_title'].'</span>';
+					$output .= '</p></div>';
+					if ($itemImage) {
+						$output .= '<div class="slide-image"><img src="'.$itemImage.'" /></div>';
+					}
+				} else {
+					if ($itemImage) {
+						$output .= '<div class="slide-image"><img src="'.$itemImage.'" /></div>';
+					}
+					$output .= '<div class="slide-content"><p>';
+					$output .= '<strong class="slide-count">'.str_pad($i, 2, '0', STR_PAD_LEFT).'</strong>';
+					$output .= '<span class="slide-text">'.$item['circles_item_title'].'</span>';
+					$output .= '</p></div>';
+				}
+				$output .= '</li>';
+			}
+			$i++;
 		}
 		$output .= '</ul>';
 	}
@@ -130,6 +165,9 @@ function navigator_gallery($atts, $content = null) {
 						    }
 					        break;
 					    case 'Timeline':
+						    if (get_sub_field('gallery_circles_items')) {
+						    	$output .= outputTimeline(get_sub_field('gallery_circles_items'));
+						    }
 					        break;
 					}
 			    }

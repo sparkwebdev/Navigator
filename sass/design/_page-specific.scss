@@ -2,7 +2,9 @@
 .home {
 	.feature-dual-panel {
 		.section-title-half {
-			max-width: 9.2em;
+			@include bp-small() {
+				max-width: 10em;
+			}
 		}
 		.section-content:before {
 			color: $color__brand-1;
@@ -35,7 +37,7 @@
 
 /* Join Our Network page */
 .page-id-7 {
-	
+
 	.feature-dual-panel {
 		&:first-of-type {
 			padding-bottom: 0;
@@ -46,6 +48,9 @@
 				}
 				@include bp-small() {
 					margin-left: 25%;
+				}
+				&.section-title-half {
+					max-width: 7em;
 				}
 			}
 			@include bp-small() {
@@ -60,6 +65,22 @@
 						@include bp-large() {
 							background-position: right center;
 						}
+					}
+				}
+			}
+			@include bp-small() {
+				z-index: 3;
+				position: relative;
+				+ .with-gallery {
+					position: relative;
+					padding-top: ($spacing__largest * 3.2);
+					margin-top: -($spacing__largest * 2.5);
+					//margin-bottom: -($spacing__largest * 2.5);
+					z-index: 2;
+					+ .section {
+						//padding-top: ($spacing__largest * 3.2);
+						position: relative;
+						z-index: 1;
 					}
 				}
 			}
@@ -82,6 +103,9 @@
 				}
 			}
 		}
+	}
+	.with-gallery {
+			//padding-bottom: ($spacing__largest * 3.2);
 	}
 	.feature-general-content {
 		&.with-tint-dark {
@@ -110,6 +134,21 @@
 				.section-image.section-image-edge {
 					top: $spacing__largest - $spacing__small;
 					bottom: $spacing__largest;
+				}
+			}
+		}
+	}
+}
+
+/* Our Clients page */
+.page-id-11 {
+	.feature-dual-panel {
+		&:first-of-type {
+			@include bp-small() {
+				.section-content {
+					.section-image.section-image-edge {
+						top: -($spacing__largest + $spacing__medium);
+					}
 				}
 			}
 		}

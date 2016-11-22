@@ -10,7 +10,6 @@
  */
 
 ?>
-
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer section" role="contentinfo">
@@ -34,16 +33,6 @@
 <?php wp_footer(); ?>
 
 <script>
-	$('.feature-carousel .bx-slider').bxSlider({
-		infiniteLoop: false,
-		hideControlOnEnd: true,
-		controls: true,
-		pager: false,
-		slideWidth: 654,
-		minSlides: 3,
-		maxSlides: 5,
-		slideMargin: 1
-	});
 	$('.owl-carousel-variable').owlCarousel({
 	    margin:60,
 	    loop:false,
@@ -62,9 +51,36 @@
 		navText : ['<span class="screen-reader-text">Previous</span>','<span class="screen-reader-text">Next</span>'],
 	});
 	
+	
+	function onScrollInit( items, trigger ) {
+		items.each( function(index, value) {
+			if (index == 0) {
+				setOffset = 70;
+			} else {
+				setOffset = 64 - (index * 4);
+			}
+			console.log(setOffset);
+	    	var osElement = $(this);
+	        var osTrigger = ( trigger ) ? trigger : osElement;
+	        osTrigger.waypoint(function() {
+				osElement.addClass('animated');
+	        },{
+				triggerOnce: true,
+				offset: setOffset + '%'
+	        });
+		});
+	}
+	
+	var navigatorTimeline = $('.gallery-timeline');
+	if (navigatorTimeline.length > 0) {
+		navigatorTimeline.before('<span class="scroll-arrow waypoint-animate"></span>');
+		onScrollInit( $('.waypoint-animate') );
+	}
+	
+	
 	//$('.feature-expander > li ul').hide();
 	$('.no-touchevents .feature-expander > li h3').click(function() {
-		$(this).next().slideToggle();
+		$(this).next().slideToggle().parent().toggleClass('expander-expanded');
 	});
 	$('.touchevents .feature-expander > li h3').hover(function() {
 		$(this).next().slideToggle();

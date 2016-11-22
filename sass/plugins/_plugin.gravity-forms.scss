@@ -14,7 +14,19 @@
 				padding: 0;
 				li {
 					margin-bottom: $spacing__medium;
-					
+					.ginput_container * {
+						color: $color__text-body;
+						&:focus {
+							color: #000;
+						}
+						&[disabled] {
+							opacity: 0.5;
+							&:hover,
+							&:focus {
+							    cursor: not-allowed;
+							}
+						}
+					}
 					input, textarea {
 						border-color: $color__tone-80;
 						border-width: 2px;
@@ -23,6 +35,9 @@
 							border-color: $color__brand-1;
 							box-shadow: $shadow__box;
 						}
+					}
+					textarea {
+						height: 12em;
 					}
 					label {
 						margin-bottom: $spacing__smallest;
@@ -53,7 +68,6 @@
 		    padding: $spacing__smaller $spacing__small;
 		    position: relative;
 		    z-index: -1;
-		    color: rgba(#fff, 0.75);
 		}
 		.validation_error {
 		    padding: $spacing__smaller $spacing__small;
@@ -120,6 +134,13 @@
 			background: red;
 		}*/
 	
+	}
+		
+	.gform_confirmation_wrapper {
+		.gform_confirmation_message {
+	    	padding: $spacing__smaller $spacing__small;
+			border-left: 2px solid $color__brand-1;
+		}
 	}
 
 }

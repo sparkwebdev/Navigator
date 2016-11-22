@@ -25,7 +25,9 @@
 			
 			&:last-child {
 				a {
-					margin-right: -($spacing__small + $spacing__smallest);
+					@include bp-nav-switch() {
+						margin-right: -($spacing__small + $spacing__smallest);
+					}
 				}
 			}
 		

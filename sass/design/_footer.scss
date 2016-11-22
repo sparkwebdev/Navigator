@@ -19,16 +19,21 @@
 		}
 	}
 
-	@include bp-col-switch {
-		text-align: left;
-	
+	@include bp-small {
 		.col {
-			line-height: 43px;
 			&:first-child {
 				br {
 					display: none;
 				}
 			}
+		}
+	}
+
+	@include bp-col-switch {
+		text-align: left;
+	
+		.col {
+			line-height: 43px;
 			&:last-child {
 				text-align: right;
 				margin-top: 0;
