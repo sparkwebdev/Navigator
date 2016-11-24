@@ -71,7 +71,7 @@ add_action( 'after_setup_theme', 'navigator_setup' );
  * @global int $content_width
  */
 function navigator_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'navigator_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'navigator_content_width', 768 );
 }
 add_action( 'after_setup_theme', 'navigator_content_width', 0 );
 
@@ -97,7 +97,7 @@ add_action( 'widgets_init', 'navigator_widgets_init' );
  * Enqueue scripts and styles.
  */
 function navigator_scripts() {
-	wp_enqueue_style( 'navigator-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'navigator-style', get_stylesheet_uri(), array(), '0.1.1' );
 
 	wp_enqueue_script( 'navigator-tools', get_template_directory_uri() . '/js/min/tools-min.js', array(), '', true );
 

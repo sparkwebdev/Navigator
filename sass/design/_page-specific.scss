@@ -3,7 +3,7 @@
 	.feature-dual-panel {
 		.section-title-half {
 			@include bp-small() {
-				max-width: 10em;
+				max-width: 11em;
 			}
 		}
 		.section-content:before {
@@ -22,6 +22,11 @@
 			.section-title {
 				&:before {
 					top: $spacing__small + $spacing__small;
+				}
+				&.section-title-half {
+					@include bp-small() {
+						max-width: 9em;
+					}
 				}
 			}
 			@include bp-small() {

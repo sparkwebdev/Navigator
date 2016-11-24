@@ -32,15 +32,15 @@
 	}
 	.site-branding {
 		width: 126px;
-		height: 55px;
+		height: 56px;
+			width: 194px;
+			height: 86px;
 		display: block;
 		background: url(img/logo.png) no-repeat;
 		background-size: 100% 100%;
-			width: 194px;
-			height: 85px;
 		@include bp-nav-switch() {
 			width: 194px;
-			height: 85px;
+			height: 86px;
 		}
 		* {
 			margin: 0;

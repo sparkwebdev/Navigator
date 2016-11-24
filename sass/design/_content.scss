@@ -69,8 +69,8 @@
 			color: #fff;
 			&:hover,
 			&:focus {
-				border-color: $color__brand-1;
-				color: $color__brand-1;
+				color: $color__tone-80;
+				background: #fff;
 			}
 		}
 	}
@@ -130,6 +130,11 @@
 			}
 			.btn {
 				background-color: #fff;
+				&:hover,
+				&:focus {
+					color: #fff;
+					background: $color__tone-80;   
+				}
 			}
 		}
 	}
@@ -190,7 +195,7 @@
 		}
 	}
 	.section-title-half {
-		max-width: 80%;
+		max-width: 85%;
 	}
 	.section-content {
 		position: relative;
@@ -308,8 +313,10 @@
 			color: #fff;
 			&:hover,
 			&:focus {
-				border-color: $color__brand-1;
-				color: $color__brand-1;
+				//border-color: $color__brand-1;
+				//color: $color__brand-1;
+				color: $color__tone-80;
+				background: #fff;
 			}
 		}
 	}
