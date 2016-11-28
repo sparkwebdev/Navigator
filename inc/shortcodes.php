@@ -13,6 +13,9 @@ function outputCarousel($images) {
 	    foreach($images as $image){
 		    $alt = $image['alt'];
 		    if (!$alt) {
+		    	$alt = $image['title'];
+		    }
+		    if (!$alt) {
 			    $alt = "Gallery image";
 		    }
 	        $output .= '<div class="item" style="width:'.$image['sizes']['medium-width'].'px;"><img src="'.$image['sizes']['medium'].'" alt="'.$alt.'" width="'.$image['sizes']['medium-width'].'" height="'.$image['sizes']['medium-height'].'" /></div>';
@@ -27,9 +30,17 @@ function outputGallery($images) {
 	if ($images) {
 		$output .= '<div class="cols feature-image-grid">';
 		foreach ($images as $image) {
-			$output .= '<div class="col col-1-4">';
+		    $alt = $image['alt'];
+		    if (!$alt) {
+		    	$alt = $image['title'];
+		    }
+		    if (!$alt) {
+			    $alt = "Gallery image";
+		    }
+		    $altClass = preg_replace('/\W+/','',strtolower(strip_tags($alt)));
+			$output .= '<div class="col col-1-4 logo-'.$altClass.'">';
 			$output .= '<div class="col-content">';
-			$output .= '<img src="'.$image['sizes']['medium'].'" />';
+			$output .= '<img src="'.$image['sizes']['medium'].'" alt="'.$alt.'" width="'.$image['sizes']['medium-width'].'" height="'.$image['sizes']['medium-height'].'" />';
 			$output .= '</div>';
 			$output .= '</div>';
 		}
@@ -96,19 +107,26 @@ function outputTimeline($items) {
 		$output .= '<ul class="gallery-timeline clear">';
 		foreach ($items as $item) {
 			if ($item['circles_item_title']) {
-				$itemImage = $item['circles_item_image']['sizes']['medium'];
+				$image = $item['circles_item_image'];
 				$output .= '<li class="waypoint-animate">';
+			    $alt = $image['alt'];
+			    if (!$alt) {
+			    	$alt = $image['title'];
+			    }
+			    if (!$alt) {
+				    $alt = "Timeline image ". $i;
+			    }
 				if ($i % 2) {
 					$output .= '<div class="slide-content"><p>';
 					$output .= '<strong class="slide-count">'.str_pad($i, 2, '0', STR_PAD_LEFT).'</strong>';
 					$output .= '<span class="slide-text">'.$item['circles_item_title'].'</span>';
 					$output .= '</p></div>';
-					if ($itemImage) {
-						$output .= '<div class="slide-image"><img src="'.$itemImage.'" /></div>';
+					if ($image) {
+						$output .= '<div class="slide-image"><img src="'.$image['sizes']['medium'].'" alt="'.$alt.'" width="'.$image['sizes']['medium-width'].'" height="'.$image['sizes']['medium-height'].'" /></div>';
 					}
 				} else {
-					if ($itemImage) {
-						$output .= '<div class="slide-image"><img src="'.$itemImage.'" /></div>';
+					if ($image) {
+						$output .= '<div class="slide-image"><img src="'.$image['sizes']['medium'].'" alt="'.$alt.'" width="'.$image['sizes']['medium-width'].'" height="'.$image['sizes']['medium-height'].'" /></div>';
 					}
 					$output .= '<div class="slide-content"><p>';
 					$output .= '<strong class="slide-count">'.str_pad($i, 2, '0', STR_PAD_LEFT).'</strong>';

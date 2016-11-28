@@ -2,10 +2,12 @@
 	
 	.col {
 		&.col-1-4 {
-			width: 50%;
-			float: left;
-			&:nth-child(2n+1) {
-				clear: left;
+			@include bp-mobile-landscape {
+				width: 50%;
+				float: left;
+				&:nth-child(2n+1) {
+					clear: left;
+				}
 			}
 			@include bp-small {
 				width: 25%;

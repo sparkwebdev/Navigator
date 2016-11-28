@@ -19,11 +19,11 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Navigator Partnership Ltd</a>,<br /> registered in Scotland SC513251
 				</div><!-- .col -->
 				<div class="col col-1-3">
-					<ul class="social-links">
+					<?php /* <ul class="social-links">
 						<li>Connect with us</li>
 						<li class="social-link-twitter"><a href=""><span class="screen-reader-text">Twitter</span></a></li>
 						<li class="social-link-linkedin"><a href=""><span class="screen-reader-text">LinkedIn</span></a></li>
-					</ul>
+					</ul> */ ?>
 				</div><!-- .col -->
 			</div><!-- .cols -->
 		</div><!-- .section-inner -->

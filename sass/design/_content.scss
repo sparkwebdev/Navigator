@@ -381,9 +381,11 @@
 /* Feature - Galleries — Image Grid */
 .feature-image-grid {
 	.col {
+    	margin: 0 auto;
 		.col-content {
 			height: 200px;
 			width: 100%;
+			text-align: center;
 		}
 		.display-table & {
 			display: table;
@@ -393,14 +395,20 @@
 			}
 		}
 		img {
+			max-height: 160px;
 			max-width: 100%;
 			height: auto;
+			width: auto;
 			margin: 0 auto;
 		}
 		text-align: center;
 		padding: 0 $spacing__medium;
 		@include bp-col-switch() {
 			padding: $spacing__smaller $spacing__medium;
+			&.logo-pmplogo,
+			&.logo-sdhomeimprovementslogo {
+				padding: $spacing__smaller $spacing__smallest;
+			}
 		}
 	}
 }
@@ -432,6 +440,9 @@
 	}
 	h3 {
 		@include font-size($font__size-h3);
+		@include bp-medium() {
+			min-height: 2.275em;
+		}
 		@include bp-nav-switch() {
 			@include font-size($font__size-h2);
 		}
