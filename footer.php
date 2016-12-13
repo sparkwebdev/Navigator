@@ -51,7 +51,7 @@
 		navText : ['<span class="screen-reader-text">Previous</span>','<span class="screen-reader-text">Next</span>'],
 	});
 	
-	
+	<?php if (is_page(9)) { ?>
 	function onScrollInit( items, trigger ) {
 		items.each( function(index, value) {
 			if (index == 0) {
@@ -59,7 +59,6 @@
 			} else {
 				setOffset = 64 - (index * 4);
 			}
-			console.log(setOffset);
 	    	var osElement = $(this);
 	        var osTrigger = ( trigger ) ? trigger : osElement;
 	        osTrigger.waypoint(function() {
@@ -76,7 +75,7 @@
 		navigatorTimeline.before('<span class="scroll-arrow waypoint-animate"></span>');
 		onScrollInit( $('.waypoint-animate') );
 	}
-	
+	<?php } ?>
 	
 	//$('.feature-expander > li ul').hide();
 	$('.no-touchevents .feature-expander > li h3').click(function() {

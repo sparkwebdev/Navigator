@@ -5,7 +5,7 @@ Theme URI: http://navigatorpartnership.com/
 Author: Steven Park
 Author URI: http://stevenpark.co.uk
 Description: A custom theme for Navigator Partnership, based on the Underscores theme from Automattic [http://underscores.me/]
-Version: 1.0.0
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: navigator
@@ -1401,6 +1401,8 @@ table {
   margin: 0 auto;
   text-align: center;
   padding: 0 1.4375em; }
+  .display-table .feature-image-grid .col {
+    padding: 0; }
   .feature-image-grid .col .col-content {
     height: 200px;
     width: 100%;
@@ -1649,6 +1651,74 @@ table {
       .feature-general-content.with-gallery .slideshow-background {
         border-bottom: #1dbeca solid 8em; } }
 
+/* Feature - Circles List (e.g. Join Our Network page) */
+.circles-list {
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  list-style: none;
+  width: 20em; }
+  @media only screen and (min-width: 30em) {
+    .circles-list {
+      width: 26em; } }
+  @media only screen and (min-width: 64em) {
+    .circles-list {
+      width: 65em; } }
+  .circles-list li {
+    background-size: 100% 100%;
+    width: 9em;
+    height: 9em;
+    padding: 1.0075em;
+    margin: 0 0.5em 0.8075em 0.5em;
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    line-height: 1.4;
+    border-radius: 50%;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+    float: left; }
+    .bgsizecover .circles-list li {
+      background-size: cover; }
+    @media only screen and (min-width: 30em) {
+      .circles-list li {
+        width: 12em;
+        height: 12em; } }
+    .circles-list li:before {
+      border-radius: 50%;
+      overflow: hidden;
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #333f48; }
+    .circles-list li:hover:before, .circles-list li:focus:before {
+      opacity: 0;
+      -webkit-transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease; }
+    .circles-list li:hover p, .circles-list li:focus p {
+      opacity: 0;
+      -webkit-transition: opacity 0.25s ease;
+      transition: opacity 0.25s ease; }
+    .circles-list li p {
+      position: relative;
+      z-index: 1;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      margin: 0; }
+      .section-inner .circles-list li p {
+        font-size: 10px;
+        font-size: 0.625rem; }
+        @media only screen and (min-width: 30em) {
+          .section-inner .circles-list li p {
+            font-size: 14px;
+            font-size: 0.875rem; } }
+
 /* Footer  */
 .section.site-footer {
   text-align: center;
@@ -1787,43 +1857,22 @@ table {
       top: 3.1925em;
       bottom: 4em; } }
 
-/* Our Clients page */
-@media only screen and (min-width: 42.5em) {
-  .page-id-11 .feature-dual-panel:first-of-type .section-content .section-image.section-image-edge {
-    top: -5.4375em; } }
-
-/* About page */
-.page-id-13 .feature-dual-panel:first-of-type .section-title:before {
-  top: 1.615em; }
-
-.page-id-13 .feature-dual-panel .section-content {
-  margin-top: 5.4375em; }
-  .page-id-13 .feature-dual-panel .section-content:before {
-    position: absolute;
-    top: -2.6em; }
-
-/* Get In Touch page */
-.page-id-15 .feature-dual-panel:last-child {
-  padding-bottom: 0; }
-
-.page-id-15 .feature-dual-panel .section-content .section-image {
-  bottom: 4em; }
-
-/* Blog */
-/* 404 Page */
-.error-404 .site-main {
-  text-align: center;
-  min-height: 20em; }
-
+/* How We Work page - Timeline feature */
 .gallery-timeline {
   list-style: none;
   padding: 0;
   margin-top: -5%; }
   .gallery-timeline li {
     position: relative;
-    padding-top: 5%; }
+    padding-top: 2.5%; }
+    @media only screen and (min-width: 42.5em) {
+      .gallery-timeline li {
+        padding-top: 5%; } }
     .gallery-timeline li .slide-image {
-      width: 35%; }
+      width: 50%; }
+      @media only screen and (min-width: 30em) {
+        .gallery-timeline li .slide-image {
+          width: 40%; } }
       @media only screen and (min-width: 42.5em) {
         .gallery-timeline li .slide-image {
           width: 30%; } }
@@ -1859,24 +1908,31 @@ table {
       right: 10%;
       z-index: -1;
       border-radius: 6px;
-      -webkit-transform-origin: 0% 100%;
-              transform-origin: 0% 100%; }
-      .js .gallery-timeline li:after {
-        content: ""; }
+      -webkit-transform-origin: 0% 85%;
+              transform-origin: 0% 85%; }
+      @media only screen and (min-width: 22.5em) {
+        .js .gallery-timeline li:after {
+          content: ""; } }
       @media only screen and (min-width: 30em) {
         .gallery-timeline li:after {
           height: 16px;
           border-radius: 8px; } }
     .gallery-timeline li:nth-child(2n+1) .slide-content {
-      padding-right: 2em; }
+      padding-right: 1.4375em; }
+      @media only screen and (min-width: 42.5em) {
+        .gallery-timeline li:nth-child(2n+1) .slide-content {
+          padding-right: 2em; } }
     .gallery-timeline li:nth-child(2n+2):after {
-      -webkit-transform-origin: 100% 0%;
-              transform-origin: 100% 0%; }
+      -webkit-transform-origin: 85% 0%;
+              transform-origin: 85% 0%; }
       @media only screen and (min-width: 42.5em) {
         .gallery-timeline li:nth-child(2n+2):after {
           top: -6em; } }
     .gallery-timeline li:nth-child(2n+2) .slide-content {
-      padding-left: 2em; }
+      padding-left: 1.4375em; }
+      @media only screen and (min-width: 42.5em) {
+        .gallery-timeline li:nth-child(2n+2) .slide-content {
+          padding-left: 2em; } }
     .gallery-timeline li:first-child:after {
       display: none; }
     .displaytable .gallery-timeline li {
@@ -1996,21 +2052,21 @@ table {
     transition: all 1s ease;
     -webkit-transition-delay: 1s;
             transition-delay: 1s; }
-  .js .gallery-timeline li:after {
+  .js .gallery-timeline li:nth-child(2n+1):after {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     -webkit-transition-delay: 0.75s;
             transition-delay: 0.75s;
-    -webkit-transform: rotate(25deg) scale(0, 1);
-            transform: rotate(25deg) scale(0, 1); }
+    -webkit-transform: rotate(28deg) scale(0, 1);
+            transform: rotate(28deg) scale(0, 1); }
     @media only screen and (min-width: 30em) {
-      .js .gallery-timeline li:after {
+      .js .gallery-timeline li:nth-child(2n+1):after {
         -webkit-transform: rotate(15deg) scale(0, 1);
                 transform: rotate(15deg) scale(0, 1); } }
   .js .gallery-timeline li:nth-child(2n+2):after {
-    -webkit-transform: rotate(-25deg) scale(0, 1);
-            transform: rotate(-25deg) scale(0, 1); }
-    @media only screen and (min-width: 42.5em) {
+    -webkit-transform: rotate(-28deg) scale(0, 1);
+            transform: rotate(-28deg) scale(0, 1); }
+    @media only screen and (min-width: 30em) {
       .js .gallery-timeline li:nth-child(2n+2):after {
         -webkit-transform: rotate(-15deg) scale(0, 1);
                 transform: rotate(-15deg) scale(0, 1); } }
@@ -2023,16 +2079,16 @@ table {
               animation: appear 1.5s 1; }
     .js .gallery-timeline li.animated .slide-content {
       opacity: 1; }
-    .js .gallery-timeline li.animated:after {
-      -webkit-transform: rotate(25deg) scale(1, 1);
-              transform: rotate(25deg) scale(1, 1); }
+    .js .gallery-timeline li.animated:nth-child(2n+1):after {
+      -webkit-transform: rotate(28deg) scale(1, 1);
+              transform: rotate(28deg) scale(1, 1); }
       @media only screen and (min-width: 30em) {
-        .js .gallery-timeline li.animated:after {
+        .js .gallery-timeline li.animated:nth-child(2n+1):after {
           -webkit-transform: rotate(15deg) scale(1, 1);
                   transform: rotate(15deg) scale(1, 1); } }
     .js .gallery-timeline li.animated:nth-child(2n+2):after {
-      -webkit-transform: rotate(-25deg) scale(1, 1);
-              transform: rotate(-25deg) scale(1, 1); }
+      -webkit-transform: rotate(-28deg) scale(1, 1);
+              transform: rotate(-28deg) scale(1, 1); }
       @media only screen and (min-width: 30em) {
         .js .gallery-timeline li.animated:nth-child(2n+2):after {
           -webkit-transform: rotate(-15deg) scale(1, 1);
@@ -2102,70 +2158,33 @@ table {
             transition-delay: 1.6s;
     z-index: 0; }
 
-.circles-list {
-  padding: 0;
-  margin: 0 auto;
+/* Our Clients page */
+@media only screen and (min-width: 42.5em) {
+  .page-id-11 .feature-dual-panel:first-of-type .section-content .section-image.section-image-edge {
+    top: -5.4375em; } }
+
+/* About page */
+.page-id-13 .feature-dual-panel:first-of-type .section-title:before {
+  top: 1.615em; }
+
+.page-id-13 .feature-dual-panel .section-content {
+  margin-top: 5.4375em; }
+  .page-id-13 .feature-dual-panel .section-content:before {
+    position: absolute;
+    top: -2.6em; }
+
+/* Get In Touch page */
+.page-id-15 .feature-dual-panel:last-child {
+  padding-bottom: 0; }
+
+.page-id-15 .feature-dual-panel .section-content .section-image {
+  bottom: 4em; }
+
+/* Blog */
+/* 404 Page */
+.error-404 .site-main {
   text-align: center;
-  list-style: none;
-  display: inline-block; }
-  .circles-list li {
-    border-radius: 50%;
-    font-size: 1em;
-    line-height: 1.4;
-    margin: 0 0.5em 0.8075em 0.5em;
-    width: 9em;
-    height: 9em;
-    padding: 1.0075em;
-    display: inline-block;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    position: relative;
-    overflow: hidden;
-    background-size: 100% 100%;
-    /*&:nth-child(2n+1) {
-			clear: left;
-		}
-		*/ }
-    .bgsizecover .circles-list li {
-      background-size: cover; }
-    @media only screen and (min-width: 30em) {
-      .circles-list li {
-        width: 12em;
-        height: 12em; } }
-    .circles-list li:before {
-      border-radius: 50%;
-      overflow: hidden;
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #333f48; }
-    .circles-list li:hover:before, .circles-list li:focus:before {
-      opacity: 0;
-      -webkit-transition: opacity 0.5s ease;
-      transition: opacity 0.5s ease; }
-    .circles-list li:hover p, .circles-list li:focus p {
-      opacity: 0;
-      -webkit-transition: opacity 0.25s ease;
-      transition: opacity 0.25s ease; }
-    .circles-list li p {
-      position: relative;
-      z-index: 1;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      margin: 0; }
-      .section-inner .circles-list li p {
-        font-size: 10px;
-        font-size: 0.625rem; }
-        @media only screen and (min-width: 30em) {
-          .section-inner .circles-list li p {
-            font-size: 14px;
-            font-size: 0.875rem; } }
+  min-height: 20em; }
 
 /*--------------------------------------------------------------
 # Plugins (3rd Party Plugins etc)

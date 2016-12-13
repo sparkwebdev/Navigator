@@ -382,6 +382,9 @@
 .feature-image-grid {
 	.col {
     	margin: 0 auto;
+		.display-table & {
+			padding: 0;
+		}
 		.col-content {
 			height: 200px;
 			width: 100%;
@@ -683,4 +686,81 @@
 			border-bottom: $color__brand-1 solid $spacing__largest*2;
 		}
 	}
+}
+
+
+/* Feature - Circles List (e.g. Join Our Network page) */
+.circles-list {
+	padding: 0;
+    margin: 0 auto;
+    text-align: center;
+	list-style: none;
+    width: 18em + ($spacing__smaller * 4);
+	@include bp-mobile-landscape() {
+		width: 24em + ($spacing__smaller * 4);
+	}
+	@include bp-large() {
+		width: 60em + ($spacing__smaller * 10);
+	}
+    li {
+		background-size: 100% 100%;
+		.bgsizecover & {
+			background-size: cover;
+		}
+		width: 9em;
+		height: 9em;
+		@include bp-mobile-landscape() {
+			width: 12em;
+			height: 12em;
+		}
+		padding: $spacing__small + $spacing__smallest;
+		margin: 0 $spacing__smaller $spacing__small $spacing__smaller;
+		font-size: 1em;
+		font-family: $font__headings;
+		font-weight: $font__weight-bold;
+		line-height: $font__line-height-tight;
+	    border-radius: 50%;
+		transform-style: preserve-3d;
+		position: relative;
+		overflow: hidden;
+		float: left;
+		&:before {
+			border-radius: 50%;
+			overflow: hidden;
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: $color__tone-80;
+		}
+		&:hover,
+		&:focus {
+			&:before {
+				opacity: 0;
+				transition: $transition__opacity;
+			}
+			p {
+				opacity: 0;
+				transition: $transition__opacity_fast;
+			}
+		}
+	    //display: flex;
+	    //align-items: center;
+		//justify-content: center;
+		p {
+			position: relative;
+			z-index: 1;
+			top: 50%;
+			transform: translateY(-50%);
+			margin: 0;
+			.section-inner & {
+				@include font-size($font__size-smallest);
+				@include bp-mobile-landscape() {
+					@include font-size($font__size-smaller);
+				}
+			}
+		}
+    }
 }
