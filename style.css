@@ -5,7 +5,7 @@ Theme URI: http://navigatorpartnership.com/
 Author: Steven Park
 Author URI: http://stevenpark.co.uk
 Description: A custom theme for Navigator Partnership, based on the Underscores theme from Automattic [http://underscores.me/]
-Version: 1.0.2
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: navigator
@@ -1008,6 +1008,31 @@ table {
         height: 86px; } }
     .site-header .site-branding * {
       margin: 0; }
+  .site-header .social-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0.8075em;
+    right: 7em; }
+    @media only screen and (min-width: 64em) {
+      .site-header .social-links {
+        top: -0.8075em;
+        right: -0.2em; } }
+    .site-header .social-links li {
+      display: inline-block;
+      vertical-align: middle; }
+      .site-header .social-links li a {
+        display: block;
+        width: 34px;
+        height: 34px;
+        background: url(img/sprite-2.png);
+        background-size: auto 200%;
+        background-position: 0 100%; }
+      .site-header .social-links li.social-link-linkedin {
+        margin-right: 0.5em; }
+        .site-header .social-links li.social-link-linkedin a {
+          background-position: 10% 100%; }
 
 .main-navigation {
   clear: both;
@@ -1371,7 +1396,7 @@ table {
     width: 40px;
     height: 40px;
     display: block;
-    background: url(img/sprite.png);
+    background: url(img/sprite-2.png);
     background-size: auto 200%;
     margin: 0 auto 0.5em auto; }
   .icon-title.icon-people {
@@ -1511,7 +1536,7 @@ table {
       position: absolute;
       width: 36px;
       height: 36px;
-      background: url(img/sprite.png) 40% 0;
+      background: url(img/sprite-2.png) 40% 0;
       background-size: auto 200%; }
     .owl-carousel .owl-controls .owl-prev {
       left: 0; }
@@ -1746,25 +1771,6 @@ table {
           margin-top: 0; } }
   .section.site-footer a {
     color: #fff; }
-  .section.site-footer .social-links {
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-    .section.site-footer .social-links li {
-      display: inline-block;
-      vertical-align: middle; }
-      .section.site-footer .social-links li a {
-        display: block;
-        width: 43px;
-        height: 43px;
-        background: url(img/sprite.png);
-        background-size: auto 200%; }
-      .section.site-footer .social-links li:first-child {
-        margin-right: 0.8075em; }
-      .section.site-footer .social-links li.social-link-linkedin {
-        margin-left: 0.2em; }
-        .section.site-footer .social-links li.social-link-linkedin a {
-          background-position: -100% 0; }
 
 /* Home page */
 @media only screen and (min-width: 42.5em) {
@@ -2185,6 +2191,59 @@ table {
 .error-404 .site-main {
   text-align: center;
   min-height: 20em; }
+
+/* Twitter Feed (currently homepage) - Wolf Tweets plugin */
+.twitter-feed {
+  background: #e7e8ea;
+  text-align: center;
+  margin-top: 1.4375em;
+  padding-top: 1.4375em;
+  padding-bottom: 1.4375em; }
+  @media only screen and (min-width: 64em) {
+    .twitter-feed {
+      margin-top: 2em;
+      padding-top: 2em;
+      padding-bottom: 2em; } }
+  .twitter-feed h3 {
+    color: #333f48; }
+  .twitter-feed .wolf-bigtweet-content span.wolf-tweet-text {
+    font-size: 21px;
+    font-size: 1.3125rem; }
+    @media only screen and (min-width: 64em) {
+      .twitter-feed .wolf-bigtweet-content span.wolf-tweet-text {
+        font-size: 28px;
+        font-size: 1.75rem; } }
+
+/* Newsletter Signup (currently homepage) - Gravity Forms plugin */
+.newsletter-signup {
+  background: #333f48;
+  text-align: center;
+  padding-top: 1.4375em;
+  padding-bottom: 1.4375em; }
+  @media only screen and (min-width: 64em) {
+    .newsletter-signup {
+      padding-top: 2em;
+      padding-bottom: 2em; } }
+  .newsletter-signup h3 {
+    color: #fff;
+    margin-bottom: 0; }
+  .newsletter-signup .gform_description {
+    color: #fff; }
+  .newsletter-signup .gform_confirmation_message {
+    color: #fff; }
+    #page .newsletter-signup .gform_confirmation_message {
+      border: 0; }
+  #page .newsletter-signup .gform_wrapper .gfield_description.validation_message {
+    display: none;
+    color: #fff;
+    position: static; }
+  .newsletter-signup .gform_wrapper .validation_error {
+    color: #fff; }
+    #page .newsletter-signup .gform_wrapper .validation_error {
+      margin: 0.8075em 0 0 0; }
+  .newsletter-signup ul li {
+    max-width: 28em;
+    margin: 0 auto; }
 
 /*--------------------------------------------------------------
 # Plugins (3rd Party Plugins etc)

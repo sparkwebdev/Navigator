@@ -45,6 +45,11 @@
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'navigator' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'depth' => '1' ) ); ?>
 			</nav><!-- #site-navigation -->
+			<ul class="social-links">
+				<li><span class="screen-reader-text">Connect with us</span></li>
+				<li class="social-link-linkedin"><a href="https://www.linkedin.com/company-beta/6651038/" target="_blank"><span class="screen-reader-text">LinkedIn</span></a></li>
+				<li class="social-link-twitter"><a href="https://twitter.com/Navship" target="_blank"><span class="screen-reader-text">Twitter</span></a></li>
+			</ul>
 		</div>
 	</header><!-- #masthead -->
 

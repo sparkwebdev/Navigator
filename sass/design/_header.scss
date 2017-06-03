@@ -47,4 +47,40 @@
 		}
 	}
 	
+	.social-links {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	    position: absolute;
+	    top: $spacing__small;
+	    right: 7em;
+	    @include bp-nav-switch() {
+	    	top: -$spacing__small;
+			right: -$spacing__smallest;
+	    }
+		
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			a {
+				display: block;
+				width: 34px;
+				height: 34px;
+				background: url(img/sprite-2.png);
+				background-size: auto 200%;
+				background-position: 0 100%;
+			}
+			&:first-child {
+				//margin-right: $spacing__small;
+			}
+			&.social-link-linkedin {
+				//margin-left: $spacing__small;
+				margin-right: $spacing__smaller;
+				a {
+					background-position: 10% 100%;
+				}
+			}
+		}
+	}
+	
 }

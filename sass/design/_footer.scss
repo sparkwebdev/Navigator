@@ -44,30 +44,4 @@
 	a {
 		color: #fff;
 	}
-	
-	.social-links {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		li {
-			display: inline-block;
-			vertical-align: middle;
-			a {
-				display: block;
-				width: 43px;
-				height: 43px;
-				background: url(img/sprite.png);
-				background-size: auto 200%;
-			}
-			&:first-child {
-				margin-right: $spacing__small;
-			}
-			&.social-link-linkedin {
-				margin-left: $spacing__smallest;
-				a {
-					background-position: -100% 0;
-				}
-			}
-		}
-	}
 }

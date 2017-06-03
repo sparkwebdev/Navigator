@@ -17,3 +17,72 @@ body {
 @import "content";
 @import "footer";
 @import "page-specific";
+
+/* Twitter Feed (currently homepage) - Wolf Tweets plugin */
+.twitter-feed {
+	background: #e7e8ea;
+	text-align: center;
+    margin-top: $spacing__medium;
+    padding-top: $spacing__medium;
+    padding-bottom: $spacing__medium;
+    @include bp-nav-switch() {
+    	margin-top: $spacing__large;
+	    padding-top: $spacing__large;
+	    padding-bottom: $spacing__large;
+    }
+    h3 {
+	    color: #333f48;
+    }
+    .wolf-bigtweet-content span.wolf-tweet-text {
+	    @include font-size($font__size-h4);
+	    @include bp-nav-switch() {
+	    	@include font-size($font__size-h3);
+	    }
+    }
+}
+/* Newsletter Signup (currently homepage) - Gravity Forms plugin */
+.newsletter-signup {
+	background: #333f48;
+	text-align: center;
+    padding-top: $spacing__medium;
+    padding-bottom: $spacing__medium;
+    @include bp-nav-switch() {
+	    padding-top: $spacing__large;
+	    padding-bottom: $spacing__large;
+    }
+    h3 {
+	    color: #fff;
+	    margin-bottom: 0;
+    }
+    .gform_description {
+	    color: #fff;
+    }
+	.gform_confirmation_message {
+	    color: #fff;
+	    #page & {
+			border: 0;
+	    }
+	}
+	.gform_wrapper .gfield_description.validation_message {
+	    #page & {
+		    display: none;
+		    color: #fff;
+			position: static;
+	    }
+	}
+    .gform_wrapper .validation_error {
+	    color: #fff;
+	    #page & {
+		    margin: $spacing__small 0 0 0;
+	    }
+    }
+    ul li {
+	    max-width: 28em;
+	    margin: 0 auto;
+    }
+    .gform_wrapper input[type="submit"] {
+	    #page & {
+		//background-color: #fff;
+	    }
+    }
+}

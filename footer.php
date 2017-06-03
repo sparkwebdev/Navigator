@@ -11,6 +11,21 @@
 
 ?>
 	</div><!-- #content -->
+	
+	<?php if ( shortcode_exists( 'wolf_tweet' ) && is_front_page()) { ?>
+	<div class="section twitter-feed">
+		<div class="section-inner">
+			<?php echo do_shortcode('[wolf_tweet username="Navship" type="single"]'); ?>
+		</div>
+	</div><!-- .twitter-feed -->
+	<?php } ?>
+	<?php if ( shortcode_exists( 'gravityform' ) && is_front_page()) { ?>
+	<div class="section newsletter-signup">
+		<div class="section-inner">
+			<?php echo do_shortcode('[gravityform id="3" title="true" description="true" ajax="true"]'); ?>
+		</div>
+	</div><!-- .newsletter-signup -->
+	<?php } ?>
 
 	<footer id="colophon" class="site-footer section" role="contentinfo">
 		<div class="section-inner">

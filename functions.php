@@ -97,7 +97,7 @@ add_action( 'widgets_init', 'navigator_widgets_init' );
  * Enqueue scripts and styles.
  */
 function navigator_scripts() {
-	wp_enqueue_style( 'navigator-style', get_stylesheet_uri(), array(), '1.0.2' );
+	wp_enqueue_style( 'navigator-style', get_stylesheet_uri(), array(), '1.0.5b' );
 
 	wp_enqueue_script( 'navigator-tools', get_template_directory_uri() . '/js/min/tools-min.js', array(), '', true );
 
